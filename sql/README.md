@@ -11,7 +11,7 @@ SELECT *
 FROM cd.members
 ```
 
-# Question 2: Lorem ipsum...
+###### Question 2: Lorem ipsum...
 
 ```sql
 SELECT blah blah 
