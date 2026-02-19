@@ -1,0 +1,8 @@
+# IDE
+.idea/
+
+# Vim swap
+*.swp
+*.swo
+linux_sql/.README.md.swp
+
