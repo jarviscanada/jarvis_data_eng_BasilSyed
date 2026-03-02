@@ -1,5 +1,8 @@
 # IDE
 .idea/
+.jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
 
 # Vim swap
 *.swp
