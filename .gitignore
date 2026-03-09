@@ -9,3 +9,12 @@
 *.swo
 linux_sql/.README.md.swp
 
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.eclipse
