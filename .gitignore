@@ -3,6 +3,7 @@
 .jupyter
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+intellij-java-google-style.xml
 
 # Vim swap
 *.swp
