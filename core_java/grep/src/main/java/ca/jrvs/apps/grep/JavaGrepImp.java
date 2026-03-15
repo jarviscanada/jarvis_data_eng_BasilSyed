@@ -16,7 +16,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 public class JavaGrepImp implements JavaGrep {
 
   private static final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);

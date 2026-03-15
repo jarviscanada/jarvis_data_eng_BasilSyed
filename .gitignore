@@ -4,6 +4,7 @@
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
 intellij-java-google-style.xml
+out/
 
 # Vim swap
 *.swp
