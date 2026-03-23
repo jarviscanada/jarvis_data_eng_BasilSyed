@@ -3,9 +3,20 @@
 .jupyter
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+intellij-java-google-style.xml
+out/
 
 # Vim swap
 *.swp
 *.swo
 linux_sql/.README.md.swp
 
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.eclipse
