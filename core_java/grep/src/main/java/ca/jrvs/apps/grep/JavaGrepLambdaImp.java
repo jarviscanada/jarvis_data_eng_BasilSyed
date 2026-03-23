@@ -5,11 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
 import java.util.stream.Stream;
+import org.apache.log4j.BasicConfigurator;
 
 /**
  * StreamAPI implementation of the GREP app.
@@ -18,8 +19,10 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
 
   public static void main(String[] args) {
 
+    BasicConfigurator.configure();
+
     if (args.length != 3) {
-      throw new IllegalArgumentException("Usage: JavaGrepImp <regex> <rootPath> <outFile>");
+      throw new IllegalArgumentException("Usage: JavaGrepLambdaImp <regex> <rootPath> <outFile>");
     }
 
     JavaGrepLambdaImp javaGrepLambdaImp = new JavaGrepLambdaImp();
@@ -35,16 +38,23 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
   }
 
   @Override
-  public List<String> readLines(File inputFile) {
+  public Stream<String> readLines(File inputFile) {
     if (inputFile == null || !inputFile.isFile()) {
       throw new IllegalArgumentException("Invalid input file: " + inputFile);
     }
 
-    try (BufferedReader reader =
-        new BufferedReader(
-            new InputStreamReader(new FileInputStream(inputFile), StandardCharsets.UTF_8))) {
+    try {
+      BufferedReader reader =
+          new BufferedReader(
+              new InputStreamReader(new FileInputStream(inputFile), StandardCharsets.UTF_8));
 
-      return reader.lines().toList();
+      return reader.lines().onClose(() -> {
+        try {
+          reader.close();
+        } catch (IOException e) {
+          throw new UncheckedIOException(e);
+        }
+      });
 
     } catch (IOException e) {
       throw new RuntimeException("Failed to read file: " + inputFile.getAbsolutePath(), e);
@@ -52,18 +62,17 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
   }
 
   @Override
-  public List<File> listFiles(String rootDir) {
+  public Stream<File> listFiles(String rootDir) {
     File rootFile = new File(rootDir);
 
     if (!rootFile.exists() || !rootFile.isDirectory()) {
       throw new IllegalArgumentException("Invalid root directory: " + rootDir);
     }
 
-    try (Stream<Path> paths = Files.walk(rootFile.toPath())) {
-      return paths
+    try {
+      return Files.walk(rootFile.toPath())
           .filter(Files::isRegularFile)
-          .map(Path::toFile)
-          .toList();
+          .map(Path::toFile);
     } catch (IOException e) {
       throw new RuntimeException("Failed to list files under: " + rootDir, e);
     }

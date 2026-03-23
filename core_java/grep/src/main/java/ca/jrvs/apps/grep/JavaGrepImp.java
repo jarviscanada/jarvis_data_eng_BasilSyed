@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,24 +47,17 @@ public class JavaGrepImp implements JavaGrep {
 
   @Override
   public void process() throws IOException {
-    List<String> matchedLines = new ArrayList<>();
-    List<File> files = listFiles(getRootPath());
-
-    for (File file : files) {
-      List<String> lines = readLines(file);
-      for (String line : lines) {
-        if (containsPattern(line)) {
-          matchedLines.add(line);
-        }
-      }
-    }
+    Stream<String> matchedLines =
+        listFiles(getRootPath())
+            .flatMap(this::readLines)
+            .filter(this::containsPattern);
 
     writeToFile(matchedLines);
-    logger.info("Done. Matched {} lines.", matchedLines.size());
+    logger.info("Done.");
   }
 
   @Override
-  public List<File> listFiles(String rootDir) {
+  public Stream<File> listFiles(String rootDir) {
     File rootFile = new File(rootDir);
 
     if (!rootFile.exists() || !rootFile.isDirectory()) {
@@ -72,7 +66,7 @@ public class JavaGrepImp implements JavaGrep {
 
     List<File> files = new ArrayList<>();
     collectFiles(rootFile, files);
-    return files;
+    return files.stream();
   }
 
   private void collectFiles(File file, List<File> files) {
@@ -92,7 +86,7 @@ public class JavaGrepImp implements JavaGrep {
   }
 
   @Override
-  public List<String> readLines(File inputFile) {
+  public Stream<String> readLines(File inputFile) {
     if (inputFile == null || !inputFile.isFile()) {
       throw new IllegalArgumentException("Invalid input file: " + inputFile);
     }
@@ -113,7 +107,7 @@ public class JavaGrepImp implements JavaGrep {
       throw new RuntimeException("Failed to read file: " + inputFile.getAbsolutePath(), e);
     }
 
-    return lines;
+    return lines.stream();
   }
 
   @Override
@@ -125,7 +119,7 @@ public class JavaGrepImp implements JavaGrep {
   }
 
   @Override
-  public void writeToFile(List<String> lines) throws IOException {
+  public void writeToFile(Stream<String> lines) throws IOException {
     File outputFile = new File(getOutFile());
     File parent = outputFile.getParentFile();
 
@@ -137,10 +131,14 @@ public class JavaGrepImp implements JavaGrep {
         new BufferedWriter(
             new OutputStreamWriter(new FileOutputStream(outputFile), StandardCharsets.UTF_8))) {
 
-      for (String line : lines) {
-        writer.write(line);
-        writer.newLine();
-      }
+      lines.forEach(line -> {
+        try {
+          writer.write(line);
+          writer.newLine();
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      });
     }
   }
 
