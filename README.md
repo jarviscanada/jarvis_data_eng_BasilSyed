@@ -19,6 +19,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BasilSyed]
 
 **Retail Data Analytics (Spark + Databricks)** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/masterhttps://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/spark)]: Developed a data analytics pipeline using Python, Pandas, and Apache Spark to analyze retail transaction datasets. Generated monthly sales trends, growth rates, and customer activity insights through data cleaning, transformation, and aggregation workflows.
 
+**Azure SQL to Databricks ETL Pipeline** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/masterhttps://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/spark)]: Designed and implemented an end-to-end ETL pipeline using Python, Azure SQL, and Databricks. Ingested large-scale CSV datasets (~13M+ rows) into Azure SQL using batch processing, then connected Databricks via JDBC and Lakeflow Connect to load data into Delta tables. Performed data transformations using PySpark and SQL, built analytical queries, and developed dashboards for business insights. Orchestrated jobs and workflows within Databricks to automate ingestion and processing.
+
 **Linux Cluster Monitoring System** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/masterhttps://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/linux_sql)]: Designed a monitoring system for a 10-node Linux cluster using Bash scripting and PostgreSQL. Automated hardware and usage data collection through scheduled jobs and stored metrics in a relational database for analysis and reporting.
 
 
