@@ -1,0 +1,117 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "4x Dean's Honour List Recipient",
+        "Match of Minds Grant Recipient",
+        "Co-op Student of the Year Finalist"
+      ],
+      "degree": "Honours Bachelor of Science in Computer Science",
+      "department": "Department of Mathematics and Science",
+      "duration": "2021-2025",
+      "school_name": "Brock University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_BasilSyed",
+  "highlighted_projects": [
+    {
+      "description": "Built an OCR-based data extraction pipeline using Microsoft Azure AI Form Recognizer to process scanned PIC documents into structured JSON and CSV formats. Automated processing of 5,000 plus files, reducing manual data entry by 20 hours per month and improving downstream evaluation speed. Implemented validation rules and feedback loops to reduce exception rework by 40 percent.",
+      "git_url": "",
+      "name": "IRIS PIC Mapping Program"
+    },
+    {
+      "description": "Co-authored a research paper published in the AIS eLibrary in the top 25 percent evaluating bias and safety in large language models. Built Python-based evaluation pipelines to benchmark GPT, Gemini, and Claude using WEAT and regard scoring methodologies, automating experiment runs and result reporting.",
+      "git_url": "https://github.com/basilsyed7/RQ1",
+      "name": "AMCIS 2025 Research Paper (AI Bias Evaluation)"
+    },
+    {
+      "description": "Acted as Product Owner for a team of 6 developing an Instagram automation platform. Led sprint planning, backlog prioritization, and requirement gathering using Jira. Defined user stories, acceptance criteria, tracked progress, and contributed to release planning and forecasting while aligning stakeholder needs with technical delivery.",
+      "git_url": "https://github.com/Rwadsariya/ConnectX_4p02",
+      "name": "ConnectX (Product Owner Experience)"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Implemented a Java-based grep application to recursively search files using regex. Integrated logging, exception handling, and performance optimizations using Maven and SLF4J.",
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/core_java",
+      "name": "Java Grep Application"
+    },
+    {
+      "description": "Developed a data analytics pipeline using Python, Pandas, and Apache Spark to analyze retail transaction datasets. Generated monthly sales trends, growth rates, and customer activity insights through data cleaning, transformation, and aggregation workflows.",
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/spark",
+      "name": "Retail Data Analytics (Spark + Databricks)"
+    },
+    {
+      "description": "Designed and implemented an end-to-end ETL pipeline using Python, Azure SQL, and Databricks. Ingested large-scale CSV datasets (~13M+ rows) into Azure SQL using batch processing, then connected Databricks via JDBC and Lakeflow Connect to load data into Delta tables. Performed data transformations using PySpark and SQL, built analytical queries, and developed dashboards for business insights. Orchestrated jobs and workflows within Databricks to automate ingestion and processing.",
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/spark",
+      "name": "Azure SQL to Databricks ETL Pipeline"
+    },
+    {
+      "description": "Designed a monitoring system for a 10-node Linux cluster using Bash scripting and PostgreSQL. Automated hardware and usage data collection through scheduled jobs and stored metrics in a relational database for analysis and reporting.",
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_BasilSyed/tree/develop/linux_sql",
+      "name": "Linux Cluster Monitoring System"
+    }
+  ],
+  "name": "Basil Syed",
+  "others": [
+    {
+      "bullets": [
+        "Data Engineering",
+        "Distributed Systems",
+        "Cloud Computing",
+        "AI Systems"
+      ],
+      "title": "Interests"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis Consulting Group",
+      "description": "Designed and implemented ETL pipelines using Apache Spark and Python for large-scale data processing. Performed data transformation, validation, and aggregation using SQL and PySpark. Built workflows in Databricks integrating distributed data systems. Optimized queries and processing jobs for scalability and performance. Collaborated in Agile environments using Git and CI/CD practices.",
+      "duration": "2025-present",
+      "title": "Data Engineer"
+    },
+    {
+      "company": "Ontario Power Generation (OPG)",
+      "description": "Built Python ETL pipelines to automate plant performance reporting and reduce manual effort. Developed Power BI dashboards for KPI tracking including cost, schedule, and reliability. Improved system reliability and reduced downtime by restoring legacy data workflows. Led QA processes by creating test plans and validation frameworks for reporting systems.",
+      "duration": "2023-2023",
+      "title": "Data Analytics Engineer"
+    },
+    {
+      "company": "Brock University",
+      "description": "Built evaluation pipelines to benchmark large language models on bias and safety metrics. Implemented WEAT and regard scoring methodologies. Co-authored an AMCIS 2025 research paper published in the AIS eLibrary.",
+      "duration": "2024-2025",
+      "title": "Artificial Intelligence Research Assistant"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Databricks",
+      "ETL Pipeline Development",
+      "Data Modeling",
+      "REST APIs",
+      "Pandas \u0026 NumPy",
+      "Maven",
+      "JUnit",
+      "Power BI"
+    ],
+    "familiar": [
+      "CI/CD (Jenkins, GitHub Actions)",
+      "Hadoop Ecosystem",
+      "Kafka (concepts)",
+      "MongoDB",
+      "Kubernetes",
+      "GCP"
+    ],
+    "proficient": [
+      "Java",
+      "Python",
+      "SQL",
+      "Apache Spark (PySpark)",
+      "Linux",
+      "Git",
+      "Docker"
+    ]
+  },
+  "summary": "I am a Data Engineer at Jarvis Consulting Group with a strong foundation in building scalable data pipelines, distributed systems, and backend systems. I have hands-on experience working with Apache Spark, Databricks, Python, and SQL to design ETL workflows, process large datasets, and generate actionable insights. I have also worked in data analytics and software engineering roles, where I built automation pipelines, dashboards, and production-grade applications. Beyond technical work, I have experience in product ownership, including sprint planning, backlog management, stakeholder communication, and defining user stories and acceptance criteria. I am passionate about solving real-world problems using data-driven systems and continuously improving system performance, scalability, and reliability."
+}
