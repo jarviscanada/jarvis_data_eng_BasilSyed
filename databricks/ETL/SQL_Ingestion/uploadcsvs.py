@@ -121,8 +121,6 @@ def upload_large_csv_in_chunks(csv_path: str, table_name: str, chunk_size: int =
 # Main
 # -----------------------------
 if __name__ == "__main__":
-    # Optional: clean restart
-    # Comment these out if you do not want to drop existing tables
     drop_table_if_exists("cards_data")
     drop_table_if_exists("transactions_data")
 
