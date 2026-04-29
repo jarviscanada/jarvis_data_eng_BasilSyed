@@ -9,7 +9,7 @@ import time
 server = "basil-jarvis.database.windows.net"
 database = "free-sql-db-123456"
 username = "CloudSAe5b9c2cc@basil-jarvis"
-password = "Jarvisstrong1"
+password = ""
 
 cards_csv = "/Users/basilsyed/Downloads/archive/cards_data.csv"
 transactions_csv = "/Users/basilsyed/Downloads/archive/transactions_data.csv"
